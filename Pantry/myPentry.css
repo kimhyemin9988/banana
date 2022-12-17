@@ -58,16 +58,67 @@ a {
   text-decoration: none;
 }
 
-/* Basic */
+/* small */
 body {
   -ms-overflow-style: scrollbar;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   html, body {
     min-width: 320px;
   }
+  .join, .login {
+    font-size: 15px;
+  }
+  .homeLogo {
+    font-size: 25px;
+  }
+  .mainForm p {
+    font-size: 15px;
+  }
+  .mainForm span {
+    font-size: 30px;
+  }
+  .mainForm li {
+    font-size: 10px;
+  }
+  .mainForm li img {
+    height: 40px;
+  }
+  .container {
+    width: 270px;
+    justify-content: space-evenly;
+  }
 }
+/* large */
+@media screen and (min-width: 481px) {
+  .join, .login {
+    font-size: 30px;
+  }
+  .homeLogo {
+    font-size: 40px;
+  }
+  .mainForm h1 {
+    font-size: 40px;
+  }
+  .mainForm p {
+    font-size: 40px;
+  }
+  .mainForm span {
+    font-size: 60px;
+  }
+  .mainForm li {
+    font-size: 30px;
+  }
+  .mainForm li img {
+    height: 100px;
+  }
+  .container {
+    width: 700px;
+    justify-content: space-evenly;
+  }
+}
+/*basic*/
 body {
   background: linear-gradient(#6285bb, #76acd2);
   height: 100vh;
@@ -86,21 +137,19 @@ header {
 header .homeLogo {
   color: #7BCCE3;
   font-weight: 700;
-  font-size: 25px;
   margin: 10px;
 }
 header .mainBtn {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 header .mainBtn .login {
   margin: 10px;
   font-weight: 800;
-  font-size: 15px;
   color: white;
   background-color: #603562;
   padding: 10px;
-  display: flex;
 }
 header .mainBtn .login:hover {
   color: white;
@@ -108,14 +157,13 @@ header .mainBtn .login:hover {
 }
 
 .join {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: 90px;
   font-weight: 800;
-  font-size: 15px;
   color: white;
   background-color: #603562;
   padding: 10px;
-  display: flex;
 }
 .join:hover {
   color: white;
@@ -126,45 +174,48 @@ main {
   grid-area: "main";
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 main .mainForm {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-}
-main .mainForm p {
-  text-align: center;
-  font-weight: 700;
 }
 main .mainForm span {
   color: #7BCCE3;
   font-weight: 700;
-  font-size: 55px;
 }
-main .mainForm .contents {
-  width: 250px;
-  border: none;
-}
-main .mainForm .navi {
-  height: 50px;
-  width: 240px;
-}
-main .mainForm .navi ul {
+main .mainForm ul {
   padding: 5px;
-  display: flex;
 }
-main .mainForm .navi ul li {
+main .mainForm ul li {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-main .mainForm .navi ul li a:hover, main .mainForm .navi ul li a:focus {
-  background-color: #222; /* 배경색 */
+main .mainForm ul li:hover {
+  background-color: rgb(12, 156, 144); /* 배경색 */
   color: #fff;
 }
-main .mainForm .navi ul li a .navi a:active {
-  background-color: #00f7ff; /* 배경 색 */
-  color: #fff;
+main .mainForm ul li:active {
+  background-color: rgb(217, 220, 220); /* 배경색 */
+  color: rgb(8, 8, 8);
+}
+
+ul.container {
+  display: flex;
+}
+
+.addClass {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=myPentry.css.map */
