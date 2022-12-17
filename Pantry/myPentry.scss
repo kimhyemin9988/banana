@@ -1,0 +1,158 @@
+//display 뷰포트 정하기 (대형 425??부터 로고제외 글씨 작아지게!)
+//현재 글씨 크기가 425이하
+//425 초과 메인 35px, 로그인 20px, 회원가입 150px 25px
+
+//3.장보기 리스트,유통기한 관리,냉장,냉동,실온 상온 나눠진 이미지 대시보드
+//=>리디 책에 예시 만든거 찾아보기 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import "_button.scss";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Basic */
+
+body {
+    -ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+
+    html, body {
+        min-width: 320px;
+    }
+}
+
+
+body{
+    background:linear-gradient(#6285bb,#76acd2);
+    height: 100vh;
+    font-family: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+    display: grid;
+    grid-template: "header"1fr"main"10fr;
+}
+header{
+    display: flex;
+    flex-direction:row;
+    //item을 무조건 한줄에 두기
+    grid-area:"header";
+    padding: 10px 10px;
+    justify-content: space-between;
+    //중앙을 비우고 양옆에 두기
+    .homeLogo{
+        color: #7BCCE3;
+        font-weight: 700;
+        font-size: 25px;
+        margin: 10px;
+        }
+    .mainBtn{
+    display: flex;
+    flex-direction:row;
+    .login{
+        margin: 10px;
+        @include buttonMain;
+        &:hover {
+            @include buttonHover;
+        }
+        }
+        }
+    }
+
+
+.join{
+    justify-content: center;
+    width: 90px;
+    @include buttonMain;
+    &:hover {
+        @include buttonHover;
+    }
+}
+
+main{
+    grid-area:"main";
+    display: flex;
+    justify-content: center;
+    .mainForm{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        p{text-align: center;
+            font-weight:700;
+        }
+        span{
+            color: #7BCCE3;
+            font-weight: 700;
+            font-size: 55px;
+        }
+        .contents {
+            width:250px;
+            border: none;
+        }
+        .navi{
+            height:50px;
+            width: 240px;
+            ul{
+                padding:5px;
+                display: flex;
+                li{
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    @include clickEvent;
+                }
+            }
+        }
+    }
+}
+
+    

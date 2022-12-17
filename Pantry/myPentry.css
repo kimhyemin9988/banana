@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Basic */
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+  html, body {
+    min-width: 320px;
+  }
+}
+body {
+  background: linear-gradient(#6285bb, #76acd2);
+  height: 100vh;
+  font-family: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  display: grid;
+  grid-template: "header" 1fr "main" 10fr;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  grid-area: "header";
+  padding: 10px 10px;
+  justify-content: space-between;
+}
+header .homeLogo {
+  color: #7BCCE3;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 10px;
+}
+header .mainBtn {
+  display: flex;
+  flex-direction: row;
+}
+header .mainBtn .login {
+  margin: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  color: white;
+  background-color: #603562;
+  padding: 10px;
+  display: flex;
+}
+header .mainBtn .login:hover {
+  color: white;
+  background-color: #b17dad;
+}
+
+.join {
+  justify-content: center;
+  width: 90px;
+  font-weight: 800;
+  font-size: 15px;
+  color: white;
+  background-color: #603562;
+  padding: 10px;
+  display: flex;
+}
+.join:hover {
+  color: white;
+  background-color: #b17dad;
+}
+
+main {
+  grid-area: "main";
+  display: flex;
+  justify-content: center;
+}
+main .mainForm {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+main .mainForm p {
+  text-align: center;
+  font-weight: 700;
+}
+main .mainForm span {
+  color: #7BCCE3;
+  font-weight: 700;
+  font-size: 55px;
+}
+main .mainForm .contents {
+  width: 250px;
+  border: none;
+}
+main .mainForm .navi {
+  height: 50px;
+  width: 240px;
+}
+main .mainForm .navi ul {
+  padding: 5px;
+  display: flex;
+}
+main .mainForm .navi ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+main .mainForm .navi ul li a:hover, main .mainForm .navi ul li a:focus {
+  background-color: #222; /* 배경색 */
+  color: #fff;
+}
+main .mainForm .navi ul li a .navi a:active {
+  background-color: #00f7ff; /* 배경 색 */
+  color: #fff;
+}
+
+/*# sourceMappingURL=myPentry.css.map */

@@ -1,0 +1,26 @@
+@mixin buttonMain{
+    font-weight: 800;
+    font-size: 15px;
+    color: white;
+    background-color: #603562;
+    padding: 10px;
+    display: flex;
+
+}
+@mixin buttonHover{
+    color: white;
+    background-color: #b17dad;
+}
+
+@mixin clickEvent{
+    a{
+        &:hover, &:focus{
+            background-color:#222;  /* 배경색 */
+            color:#fff; 
+        }
+        .navi a:active {
+            background-color:#00f7ff;  /* 배경 색 */
+            color:#fff;
+        }
+    }
+}
