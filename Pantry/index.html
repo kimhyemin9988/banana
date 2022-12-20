@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,24 +20,29 @@
     </header>
     <main>
         <div class="mainForm">
-            <p>우리집의 모든식료품을 관리하세요!</p><br>
+            <h1>우리집의 모든식료품을 관리하세요!</h1><br>
             <div class="join">
                 <a href="#">회원가입하기</a>
             </div><br>
             <span><b>'MyPentry'</b></span>
-            <br><br><br>
-            <div>
-                <ul class="container">
-                    <li>장보기 목록
-                        <img class="hidden" src="img/list.png" alt="list" />
-                    </li>
-                    <li>유통기한 알림
-                        <img class="hidden" src="img/noti.png" alt="noti" />
-                    </li>
-                    <li>온도별보관
-                        <img class="hidden" src="img/celsius.png" alt="celsius"/>
-                    </li>
-                </ul>
+            <br><br>
+            <div class="container">
+                <div class="button">
+                    <button class="tab-btn active" data-id="list">장보기목록</button>
+                    <button class="tab-btn" data-id="noti">유통기한 알림</button>
+                    <button class="tab-btn" data-id="celsius">온도별 보관</button>
+                </div>
+                <article>
+                    <div class="content active" id="list">
+                        <img src="img/list.png" alt="list" />
+                    </div>
+                    <div class="content" id="noti">
+                        <img src="img/noti.png" alt="noti" />
+                    </div>
+                    <div class="content" id="celsius">
+                        <img src="img/celsius.png" alt="celsius"/>
+                    </div>
+                </article>
             </div>
         </div>
     </main>
