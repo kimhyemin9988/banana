@@ -1,0 +1,62 @@
+<!--타이틀(마우스를 올리면 콘솔창에 마우스가 올라갔다고 뜨는)
+    버튼 + 텍스트(누르면 카운트 텍스트가 변하는)-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="root"></div> <!--body에 최초 <div id="root"></div>는 넣어주기-->
+</body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+        function MinutesToHours() {
+            const [amount, setAmount] = React.useState(0);
+            const [flipped, setflipped] = React.useState(true);
+            //기본값을 true로 지정,분 사용가능
+           const onChange = (event) => {
+            //input안의 값이 바뀔때마다
+            setAmount(event.target.value);
+           };
+           const reset = () =>{
+            setAmount("");
+           };
+           const onFlip = () =>{
+            reset();
+            setflipped((flipped)=>(!flipped));
+            //버튼을 누르면 false가 됨
+           }
+        return(
+        <div>
+            <div>
+                <label htmlFor="minutes">minutes</label>
+                <input id="minutes" placeholder="minutes" type="number" value={!flipped ? amount*60 : amount} onChange={onChange}
+                disabled={!flipped}/>
+            </div>
+            <div>
+                <label htmlFor="hours">hours</label>
+                <input id="hours" placeholder="hours"  type="number" value={flipped ? amount/60: amount} onChange={onChange} disabled={flipped}/>
+            </div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={onFlip}>Flip</button>
+        </div>
+            );//flipped === false이면 true를 반환 => 초기값에는 hours를 사용못하게 한다.
+        }//4)함수형 컨테이너 컴포넌트 안에 리턴 있는 형태로 2개의 함수형 컴포넌트(h1, button)를 그린다
+        //2)id root를 가져온다
+        function Container() {
+            const [count,Firstfunction] = React.useState(0);
+            //React.useState와 비구조할당을 사용해서
+            const onClick = () =>{
+                Firstfunction((current)=>(current+1));
+           }
+        return(
+        <div>
+            <h1>{count}</h1> 
+            <button onClick={onClick}>click me!</button>
+        </div>
+            );//flipped === false이면 true를 반환 => 초기값에는 hours를 사용못하게 한다.
+        }//4)함수형 컨테이너 컴포넌트 안에 리턴 있는 형태로 2개의 함수형 컴포넌트(h1, button)를 그린다
+        ReactDOM.render(<MinutesToHours />, root);
+        //3)ReactDOM.render()를 이용해서 root안에 container(컴포넌트, div형태)를 그린다
+    </script>
+</html>
